@@ -1,11 +1,11 @@
 import React from "react";
 
-import NavBar from "./components/Navbar/navBar";
+import NavbarSidebar from "./components/Navbar/Navbar-Sidebar/navbarSidebar";
 
 const App = () => {
   return (
     <React.Fragment>
-      <NavBar />
+      <NavbarSidebar />
     </React.Fragment>
   );
 };
