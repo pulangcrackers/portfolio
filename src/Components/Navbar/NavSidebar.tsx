@@ -103,7 +103,7 @@ const useStyles = makeStyles((theme: Theme) =>
       marginLeft: 30
     },
     navHeaderIcon: {
-      color: "#fc0505",
+      color: "#fc0505"
     },
     list: {
       marginTop: 20
@@ -189,19 +189,19 @@ const NavSidebar = () => {
           </IconButton>
         </div>
         <List className={classes.list}>
-          <ListItem className={classes.listItem} component={Link} to="/">
+          <ListItem className={classes.listItem} component={Link} to="/profile/">
             <ListItemIcon className={classes.listIcon}>
               <HomeIcon />
             </ListItemIcon>
             <ListItemText className={classes.listText} primary="Home" />
           </ListItem>
-          <ListItem className={classes.listItem} component={Link} to="/about">
+          <ListItem className={classes.listItem} component={Link} to="/profile/about">
             <ListItemIcon className={classes.listIcon}>
               <HomeIcon />
             </ListItemIcon>
             <ListItemText className={classes.listText} primary="About Me" />
           </ListItem>
-          <ListItem className={classes.listItem} component={Link} to="/works">
+          <ListItem className={classes.listItem} component={Link} to="/profile/works">
             <ListItemIcon className={classes.listIcon}>
               <HomeIcon />
             </ListItemIcon>
@@ -210,7 +210,7 @@ const NavSidebar = () => {
           <ListItem
             className={classes.listItem}
             component={Link}
-            to="/services"
+            to="/profile/services"
           >
             <ListItemIcon className={classes.listIcon}>
               <HomeIcon />
@@ -222,10 +222,10 @@ const NavSidebar = () => {
       <main className={classes.content}>
         <div className={classes.toolbar} />
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/works" component={Works} />
-          <Route path="/services" component={Services} />
+          <Route exact path="/profile/" component={Home} />
+          <Route path="/profile/about" component={About} />
+          <Route path="/profile/works" component={Works} />
+          <Route path="/profile/services" component={Services} />
         </Switch>
       </main>
     </div>
