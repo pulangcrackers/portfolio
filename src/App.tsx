@@ -1,12 +1,15 @@
 import React from "react";
 
-import NavbarSidebar from "./components/Navbar/Navbar-Sidebar/navbarSidebar";
+import { BrowserRouter as Router } from "react-router-dom";
+import NavSidebar from "./Components/Navbar/NavSidebar";
 
 const App = () => {
   return (
-    <React.Fragment>
-      <NavbarSidebar />
-    </React.Fragment>
+    <div className="App">
+      <Router>
+        <NavSidebar />
+      </Router>
+    </div>
   );
 };
 
