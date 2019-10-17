@@ -189,19 +189,31 @@ const NavSidebar = () => {
           </IconButton>
         </div>
         <List className={classes.list}>
-          <ListItem className={classes.listItem} component={Link} to="/profile/">
+          <ListItem
+            className={classes.listItem}
+            component={Link}
+            to="/portfolio/"
+          >
             <ListItemIcon className={classes.listIcon}>
               <HomeIcon />
             </ListItemIcon>
             <ListItemText className={classes.listText} primary="Home" />
           </ListItem>
-          <ListItem className={classes.listItem} component={Link} to="/profile/about">
+          <ListItem
+            className={classes.listItem}
+            component={Link}
+            to="/portfolio/about"
+          >
             <ListItemIcon className={classes.listIcon}>
               <HomeIcon />
             </ListItemIcon>
             <ListItemText className={classes.listText} primary="About Me" />
           </ListItem>
-          <ListItem className={classes.listItem} component={Link} to="/profile/works">
+          <ListItem
+            className={classes.listItem}
+            component={Link}
+            to="/portfolio/works"
+          >
             <ListItemIcon className={classes.listIcon}>
               <HomeIcon />
             </ListItemIcon>
@@ -210,7 +222,7 @@ const NavSidebar = () => {
           <ListItem
             className={classes.listItem}
             component={Link}
-            to="/profile/services"
+            to="/portfolio/services"
           >
             <ListItemIcon className={classes.listIcon}>
               <HomeIcon />
@@ -222,10 +234,10 @@ const NavSidebar = () => {
       <main className={classes.content}>
         <div className={classes.toolbar} />
         <Switch>
-          <Route exact path="/profile/" component={Home} />
-          <Route path="/profile/about" component={About} />
-          <Route path="/profile/works" component={Works} />
-          <Route path="/profile/services" component={Services} />
+          <Route exact path="/portfolio/" component={Home} />
+          <Route path="/portfolio/about" component={About} />
+          <Route path="/portfolio/works" component={Works} />
+          <Route path="/portfolio/services" component={Services} />
         </Switch>
       </main>
     </div>
