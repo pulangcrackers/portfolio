@@ -6,23 +6,27 @@ import {
   useTheme,
   Theme
 } from "@material-ui/core/styles";
-import Drawer from "@material-ui/core/Drawer";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import Typography from "@material-ui/core/Typography";
-import Divider from "@material-ui/core/Divider";
-import IconButton from "@material-ui/core/IconButton";
+import {
+  AppBar,
+  Toolbar,
+  CssBaseline,
+  Typography,
+  Drawer,
+  Divider,
+  IconButton,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText
+} from "@material-ui/core/";
+
 import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
-import ListItemText from "@material-ui/core/ListItemText";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
 import HomeIcon from "@material-ui/icons/Home";
-import MailIcon from "@material-ui/icons/Mail";
+import AccountBoxIcon from "@material-ui/icons/AccountBox";
+import LaptopMacIcon from "@material-ui/icons/LaptopMac";
+import BuildIcon from "@material-ui/icons/Build";
 
 import { Link, Switch, Route } from "react-router-dom";
 
@@ -57,7 +61,10 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     menuButton: {
       marginRight: 15,
-      color: "#fc0505"
+      color: "#fc0505",
+      "&:hover": {
+        color: "#fff"
+      }
     },
     hide: {
       display: "none"
@@ -117,10 +124,15 @@ const useStyles = makeStyles((theme: Theme) =>
       alignItems: "center"
     },
     listIcon: {
-      color: "#fc0505"
+      color: "#fc0505",
+      alignItems: "center",
+      "&:hover": {
+        color: "#fff"
+      }
     },
     divider: {
-      backgroundColor: "#fc0505"
+      backgroundColor: "#fc0505",
+      marginBottom: 20
     }
   })
 );
@@ -199,33 +211,36 @@ const NavSidebar = () => {
             </ListItemIcon>
             <ListItemText className={classes.listText} primary="Home" />
           </ListItem>
+          <Divider className={classes.divider} />
           <ListItem
             className={classes.listItem}
             component={Link}
             to="/portfolio/about"
           >
             <ListItemIcon className={classes.listIcon}>
-              <HomeIcon />
+              <AccountBoxIcon />
             </ListItemIcon>
             <ListItemText className={classes.listText} primary="About Me" />
           </ListItem>
+          <Divider className={classes.divider} />
           <ListItem
             className={classes.listItem}
             component={Link}
             to="/portfolio/works"
           >
             <ListItemIcon className={classes.listIcon}>
-              <HomeIcon />
+              <LaptopMacIcon />
             </ListItemIcon>
             <ListItemText className={classes.listText} primary="Works" />
           </ListItem>
+          <Divider className={classes.divider} />
           <ListItem
             className={classes.listItem}
             component={Link}
             to="/portfolio/services"
           >
             <ListItemIcon className={classes.listIcon}>
-              <HomeIcon />
+              <BuildIcon />
             </ListItemIcon>
             <ListItemText className={classes.listText} primary="Services" />
           </ListItem>
@@ -245,8 +260,7 @@ const NavSidebar = () => {
 };
 
 export default NavSidebar;
-{
-  /* <Link className={classes.link} to="/">
+/* <Link className={classes.link} to="/">
           <ListItemIcon className={classes.listIcon}>
             <HomeIcon />
           </ListItemIcon>
@@ -264,9 +278,7 @@ export default NavSidebar;
           </ListItemIcon>
           <ListItemText>Shop</ListItemText>
         </Link> */
-}
-{
-  /* <Link className={classes.link} to="/about">
+/* <Link className={classes.link} to="/about">
           <ListItemIcon className={classes.listIcon}>
             <HomeIcon />
           </ListItemIcon>
@@ -277,7 +289,6 @@ export default NavSidebar;
           </ListItemIcon>
           <ListItemText>Shop</ListItemText>
         </Link> */
-}
 // <AppBar position="static">
 //   <Toolbar>
 //     <Typography variant="h6">Hello</Typography>
@@ -293,8 +304,7 @@ export default NavSidebar;
 //       </Link>
 //     </Typography>
 //   </Toolbar>
-{
-  /* <Link className={classes.link} to="/">
+/* <Link className={classes.link} to="/">
           <li>Home</li>
         </Link>
         <Link className={classes.link} to="/about">
@@ -303,4 +313,3 @@ export default NavSidebar;
         <Link className={classes.link} to="/shop">
           <li>Shop</li>
         </Link> */
-}
