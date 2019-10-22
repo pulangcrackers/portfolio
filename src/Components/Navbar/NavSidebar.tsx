@@ -28,13 +28,15 @@ import AccountBoxIcon from "@material-ui/icons/AccountBox";
 import LaptopMacIcon from "@material-ui/icons/LaptopMac";
 import BuildIcon from "@material-ui/icons/Build";
 
-import { Link, Switch, Route } from "react-router-dom";
+import { Link, Switch, Route, withRouter } from "react-router-dom";
 
 import NavHeader from "../Navbar/NavHeader";
 import Home from "../Home";
 import About from "../About";
 import Services from "../Services";
 import Works from "../Works";
+
+import bg2 from "../../assets/bg2.jpg";
 
 const drawerWidth = 240;
 
@@ -44,7 +46,7 @@ const useStyles = makeStyles((theme: Theme) =>
       display: "flex"
     },
     appBar: {
-      backgroundColor: "#333",
+      backgroundColor: "rgba(0, 0, 0, 3.5)",
       zIndex: theme.zIndex.drawer + 1,
       transition: theme.transitions.create(["width", "margin"], {
         easing: theme.transitions.easing.sharp,
@@ -76,7 +78,7 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     drawerOpen: {
       color: "#fff",
-      backgroundColor: "#333",
+      backgroundColor: "rgba(0, 0, 0, 3.5)",
       width: drawerWidth,
       transition: theme.transitions.create("width", {
         easing: theme.transitions.easing.sharp,
@@ -84,7 +86,7 @@ const useStyles = makeStyles((theme: Theme) =>
       })
     },
     drawerClose: {
-      backgroundColor: "#333",
+      backgroundColor: "rgba(0, 0, 0, 3.5)",
       transition: theme.transitions.create("width", {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen
@@ -104,7 +106,12 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     content: {
       flexGrow: 1,
-      padding: theme.spacing(3)
+      padding: theme.spacing(5),
+      backgroundImage: `url(${bg2})`,
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      height: "100vh",
+      width: "auto"
     },
     navIcon: {
       marginLeft: 30
@@ -121,7 +128,8 @@ const useStyles = makeStyles((theme: Theme) =>
     listText: {
       color: "#fff",
       textDecoration: "none",
-      alignItems: "center"
+      alignItems: "center",
+      fontFamily: "Nunito"
     },
     listIcon: {
       color: "#fc0505",
@@ -133,13 +141,19 @@ const useStyles = makeStyles((theme: Theme) =>
     divider: {
       backgroundColor: "#fc0505",
       marginBottom: 20
+    },
+    slide: {
+      backgroundColor: "rgba(3, 3, 3, 0.5)",
+      height: "100vh",
+      width: "auto"
     }
   })
 );
 
-const NavSidebar = () => {
+const NavSidebar = (props: any) => {
   const classes = useStyles();
   const theme = useTheme();
+  const pathname = props.location.pathname;
   const [open, setOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
@@ -205,39 +219,43 @@ const NavSidebar = () => {
             className={classes.listItem}
             component={Link}
             to="/portfolio/"
+            selected={"/portfolio/" === pathname}
           >
             <ListItemIcon className={classes.listIcon}>
               <HomeIcon />
             </ListItemIcon>
             <ListItemText className={classes.listText} primary="Home" />
           </ListItem>
-          <Divider className={classes.divider} />
+          {/* <Divider className={classes.divider} /> */}
           <ListItem
             className={classes.listItem}
             component={Link}
             to="/portfolio/about"
+            selected={"/portfolio/about" === pathname}
           >
             <ListItemIcon className={classes.listIcon}>
               <AccountBoxIcon />
             </ListItemIcon>
             <ListItemText className={classes.listText} primary="About Me" />
           </ListItem>
-          <Divider className={classes.divider} />
+          {/* <Divider className={classes.divider} /> */}
           <ListItem
             className={classes.listItem}
             component={Link}
             to="/portfolio/works"
+            selected={"/portfolio/works" === pathname}
           >
             <ListItemIcon className={classes.listIcon}>
               <LaptopMacIcon />
             </ListItemIcon>
             <ListItemText className={classes.listText} primary="Works" />
           </ListItem>
-          <Divider className={classes.divider} />
+          {/* <Divider className={classes.divider} /> */}
           <ListItem
             className={classes.listItem}
             component={Link}
             to="/portfolio/services"
+            selected={"/portfolio/services" === pathname}
           >
             <ListItemIcon className={classes.listIcon}>
               <BuildIcon />
@@ -254,12 +272,13 @@ const NavSidebar = () => {
           <Route path="/portfolio/works" component={Works} />
           <Route path="/portfolio/services" component={Services} />
         </Switch>
+        {/* <div className={classes.slide}/> */}
       </main>
     </div>
   );
 };
 
-export default NavSidebar;
+export default withRouter(NavSidebar);
 /* <Link className={classes.link} to="/">
           <ListItemIcon className={classes.listIcon}>
             <HomeIcon />
