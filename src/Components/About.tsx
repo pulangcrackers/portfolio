@@ -54,7 +54,7 @@
 
 //   return (
 //     <div>
-//       <Paper className={classes.root}>
+//       <div className={classes.root}>
 //         <Tabs
 //           orientation="vertical"
 //           variant="scrollable"
@@ -85,7 +85,16 @@
 // export default About;
 
 import React from "react";
-import { Paper, Typography, Tabs, Tab, Box } from "@material-ui/core";
+import {
+  Paper,
+  Typography,
+  Tabs,
+  Tab,
+  Box,
+  List,
+  ListItem,
+  ListItemText
+} from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 
 interface TabPanelProps {
@@ -99,16 +108,18 @@ function TabPanel(props: TabPanelProps) {
   const { children, value, index, className, ...other } = props;
 
   return (
-    <Typography
-      component="div"
-      role="tabpanel"
-      hidden={value !== index}
-      id={`vertical-tabpanel-${index}`}
-      aria-labelledby={`vertical-tab-${index}`}
-      {...other}
-    >
-      <Box>{children}</Box>
-    </Typography>
+    <Paper>
+      <Typography
+        component="div"
+        role="tabpanel"
+        hidden={value !== index}
+        id={`vertical-tabpanel-${index}`}
+        aria-labelledby={`vertical-tab-${index}`}
+        {...other}
+      >
+        <Box>{children}</Box>
+      </Typography>
+    </Paper>
   );
 }
 
@@ -121,25 +132,38 @@ function a11yProps(index: any) {
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
+    paper: {
+      padding: 0,
+      margin: 0
+    },
     root: {
       flexGrow: 1,
-      padding: theme.spacing(3, 2),
-      backgroundColor: "rgba(0, 0, 0, 0.1)",
+      margin: 0,
+      padding: 0,
       display: "flex",
       // height: 290,
-      position: "absolute",
+      position: "relative",
       top: 0,
       bottom: 0,
       right: 0,
-      left: 50,
-      alignItems: "center"
+      left: 0,
+      alignItems: "center",
+      color: "#fff"
     },
     tabsContainer: {
       borderRight: `1px solid ${theme.palette.divider}`,
-      padding: "32px"
+      // padding: "32px"
+      padding: 0,
+      margin: 0
+    },
+    tabsTitleHeader: {
+      padding: 20,
+      fontSize: 50,
+      textTransform: "uppercase"
     },
     tabsTitle: {
-      padding: "16px"
+      padding: 20,
+      fontSize: 30
     },
     tabsContentContainer: {
       padding: "32px",
@@ -149,7 +173,15 @@ const useStyles = makeStyles((theme: Theme) =>
       padding: "0px"
     },
     tabPanelContent: {
-      padding: "16px"
+      padding: "16px",
+      backgroundColor: "#2A2A2A"
+    },
+    tabText: {
+      color: "#fff",
+      textTransform: "initial",
+      fontSize: 20,
+      textAlign: "right",
+      alignItems: "right"
     }
   })
 );
@@ -166,75 +198,62 @@ const About = () => {
     <div>
       <div className={classes.root}>
         <div className={classes.tabsContainer}>
-          <Typography variant="h5" className={classes.tabsTitle}>
+          <Typography variant="h5" className={classes.tabsTitleHeader}>
             About
           </Typography>
           <Tabs
             orientation="vertical"
             variant="fullWidth"
-            // indicatorColor="primary"
-            textColor="primary"
+            color="primary"
+            indicatorColor="secondary"
             scrollButtons="off"
             value={value}
             onChange={handleChange}
             aria-label="Vertical tabs example"
-            classes={{
-              indicator: "custom-indicator"
-            }}
+            // className={classes.tabs}
+            // classes={{
+            //   indicator: "custom-indicator"
+            // }}
           >
             <Tab
-              label="Facebook"
+              className={classes.tabText}
+              label="Myself"
               {...a11yProps(0)}
-              classes={{
-                root: "custom-tab",
-                wrapper: "vertical-tab-label-custom-wrapper",
-                selected: "vertical-tab-label-custom-selected"
-              }}
+              // classes={{
+              //   root: "custom-tab",
+              //   wrapper: "vertical-tab-label-custom-wrapper",
+              //   selected: "vertical-tab-label-custom-selected"
+              // }}
             />
             <Tab
-              label="Twitter"
+              className={classes.tabText}
+              label="Contact"
               {...a11yProps(1)}
-              classes={{
-                root: "custom-tab",
-                wrapper: "vertical-tab-label-custom-wrapper",
-                selected: "vertical-tab-label-custom-selected"
-              }}
+              // classes={{
+              //   root: "custom-tab",
+              //   wrapper: "vertical-tab-label-custom-wrapper",
+              //   selected: "vertical-tab-label-custom-selected"
+              // }}
             />
             <Tab
-              label="Github"
+              className={classes.tabText}
+              label="Email"
               {...a11yProps(2)}
-              classes={{
-                root: "custom-tab",
-                wrapper: "vertical-tab-label-custom-wrapper",
-                selected: "vertical-tab-label-custom-selected"
-              }}
+              // classes={{
+              //   root: "custom-tab",
+              //   wrapper: "vertical-tab-label-custom-wrapper",
+              //   selected: "vertical-tab-label-custom-selected"
+              // }}
             />
             <Tab
-              label="Instagram"
+              className={classes.tabText}
+              label="Social Media"
               {...a11yProps(3)}
-              classes={{
-                root: "custom-tab",
-                wrapper: "vertical-tab-label-custom-wrapper",
-                selected: "vertical-tab-label-custom-selected"
-              }}
-            />
-            <Tab
-              label="Gmail"
-              {...a11yProps(4)}
-              classes={{
-                root: "custom-tab",
-                wrapper: "vertical-tab-label-custom-wrapper",
-                selected: "vertical-tab-label-custom-selected"
-              }}
-            />
-            <Tab
-              label="LinkedIn"
-              {...a11yProps(5)}
-              classes={{
-                root: "custom-tab",
-                wrapper: "vertical-tab-label-custom-wrapper",
-                selected: "vertical-tab-label-custom-selected"
-              }}
+              // classes={{
+              //   root: "custom-tab",
+              //   wrapper: "vertical-tab-label-custom-wrapper",
+              //   selected: "vertical-tab-label-custom-selected"
+              // }}
             />
           </Tabs>
         </div>

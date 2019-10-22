@@ -12,7 +12,6 @@ import {
   CssBaseline,
   Typography,
   Drawer,
-  Divider,
   IconButton,
   List,
   ListItem,
@@ -120,10 +119,11 @@ const useStyles = makeStyles((theme: Theme) =>
       color: "#fc0505"
     },
     list: {
-      marginTop: 20
+      marginTop: 50
     },
     listItem: {
-      marginBottom: 25
+      marginBottom: 50,
+      marginLeft: 8
     },
     listText: {
       color: "#fff",
