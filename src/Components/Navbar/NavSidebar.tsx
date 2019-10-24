@@ -122,8 +122,7 @@ const useStyles = makeStyles((theme: Theme) =>
       marginTop: 50
     },
     listItem: {
-      marginBottom: 50,
-      marginLeft: 8
+      marginBottom: 50
     },
     listText: {
       color: "#fff",
