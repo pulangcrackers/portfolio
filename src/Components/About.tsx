@@ -91,11 +91,17 @@ import {
   Tabs,
   Tab,
   Box,
-  List,
-  ListItem,
-  ListItemText
+  Toolbar,
+  Avatar
 } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
+
+import facebook from "../assets/facebook.png";
+import twitter from "../assets/twitter.png";
+import instagram from "../assets/instagram.png";
+import linkedIn from "../assets/linkedIn.png";
+import github from "../assets/github.png";
+import email from "../assets/email.png";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -174,7 +180,14 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     tabPanelContent: {
       padding: "16px",
-      backgroundColor: "#2A2A2A"
+      backgroundColor: "#000",
+      color: "#fff",
+      textAlign: "center"
+    },
+    tabPanelContentContainer: {
+      display: "block",
+      textAlign: "left",
+      backgroundColor: "red"
     },
     tabText: {
       color: "#fff",
@@ -182,6 +195,18 @@ const useStyles = makeStyles((theme: Theme) =>
       fontSize: 20,
       textAlign: "right",
       alignItems: "right"
+    },
+    toolbarContent: {
+      margin: 0,
+      padding: 0
+    },
+    socialMediaLogo: {
+      height: 30,
+      width: 30,
+      marginRight: 5,
+      "&:last-child": {
+        marginRight: 0,
+      }
     }
   })
 );
@@ -261,21 +286,45 @@ const About = () => {
         <div className={classes.tabsContentContainer}>
           <TabPanel value={value} index={0} className={classes.noPadding}>
             <Typography variant="h5" className={classes.tabsTitle}>
-              Facebook
+              Myself
             </Typography>
-            <div className={classes.tabPanelContent}>Facebook</div>
+            <div className={classes.tabPanelContent}>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga
+              suscipit aliquid possimus. Itaque perferendis quae sequi excepturi
+              nesciunt iste ducimus error assumenda. Sequi non deleniti pariatur
+              adipisci sed tempore impedit!
+            </div>
           </TabPanel>
           <TabPanel value={value} index={1} className={classes.noPadding}>
             <Typography variant="h5" className={classes.tabsTitle}>
-              Twitter
+              Contact
             </Typography>
-            <div className={classes.tabPanelContent}>Twitter</div>
+            <div className={classes.tabPanelContent}>Phone: 09071710765</div>
           </TabPanel>
           <TabPanel value={value} index={2} className={classes.noPadding}>
             <Typography variant="h5" className={classes.tabsTitle}>
-              Github
+              Email
             </Typography>
-            <div className={classes.tabPanelContent}>Github</div>
+            <div className={classes.tabPanelContent}>
+              <Toolbar className={classes.toolbarContent}>
+                <Avatar className={classes.socialMediaLogo} src={email} />{" "}
+                bmariepaula121@gmail.com
+              </Toolbar>
+            </div>
+          </TabPanel>
+          <TabPanel value={value} index={3} className={classes.noPadding}>
+            <Typography variant="h5" className={classes.tabsTitle}>
+              Social Media
+            </Typography>
+            <div className={classes.tabPanelContent}>
+              <Toolbar>
+                <Avatar className={classes.socialMediaLogo} src={twitter} />
+                <Avatar className={classes.socialMediaLogo} src={instagram} />
+                <Avatar className={classes.socialMediaLogo} src={github} />
+                <Avatar className={classes.socialMediaLogo} src={linkedIn} />
+                <Avatar className={classes.socialMediaLogo} src={facebook} />
+              </Toolbar>
+            </div>
           </TabPanel>
         </div>
       </div>

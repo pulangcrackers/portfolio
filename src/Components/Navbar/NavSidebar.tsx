@@ -143,8 +143,12 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     slide: {
       backgroundColor: "rgba(3, 3, 3, 0.5)",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
       height: "100vh",
-      width: "auto"
+      width: "auto",
+      display: "flex",
+      position: "absolute"
     }
   })
 );

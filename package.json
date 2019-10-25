@@ -5,6 +5,7 @@
   "homepage": "https://pulangcrackers.github.io/portfolio",
   "dependencies": {
     "@material-ui/core": "^4.4.2",
+    "@material-ui/icons": "^4.5.1",
     "@material-ui/styles": "^4.4.1",
     "@types/jest": "24.0.18",
     "@types/node": "12.7.5",
