@@ -96,6 +96,8 @@ import {
 } from "@material-ui/core";
 import { makeStyles, createStyles, Theme } from "@material-ui/core/styles";
 
+import "../App.css";
+
 import facebook from "../assets/facebook.png";
 import twitter from "../assets/twitter.png";
 import instagram from "../assets/instagram.png";
@@ -183,6 +185,8 @@ const useStyles = makeStyles((theme: Theme) =>
       backgroundColor: "#000",
       color: "#fff",
       textAlign: "center"
+      // position: "relative",
+      // display: "flex"
     },
     tabPanelContentContainer: {
       display: "block",
@@ -203,10 +207,13 @@ const useStyles = makeStyles((theme: Theme) =>
     socialMediaLogo: {
       height: 30,
       width: 30,
-      marginRight: 5,
+      marginRight: 10,
       "&:last-child": {
-        marginRight: 0,
+        marginRight: 0
       }
+    },
+    avatarText: {
+      marginLeft: 5
     }
   })
 );
@@ -308,7 +315,9 @@ const About = () => {
             <div className={classes.tabPanelContent}>
               <Toolbar className={classes.toolbarContent}>
                 <Avatar className={classes.socialMediaLogo} src={email} />{" "}
-                bmariepaula121@gmail.com
+                <Typography className={classes.avatarText}>
+                  bmariepaula121@gmail.com
+                </Typography>
               </Toolbar>
             </div>
           </TabPanel>
@@ -318,11 +327,41 @@ const About = () => {
             </Typography>
             <div className={classes.tabPanelContent}>
               <Toolbar>
-                <Avatar className={classes.socialMediaLogo} src={twitter} />
-                <Avatar className={classes.socialMediaLogo} src={instagram} />
-                <Avatar className={classes.socialMediaLogo} src={github} />
-                <Avatar className={classes.socialMediaLogo} src={linkedIn} />
-                <Avatar className={classes.socialMediaLogo} src={facebook} />
+                <a
+                  className="social"
+                  href="https://www.facebook.com/profile.php?id=100004479289478/"
+                  target="_blank"
+                >
+                  <Avatar className={classes.socialMediaLogo} src={facebook} />
+                </a>
+                <a
+                  className="social"
+                  href="https://twitter.com/pulangcrackers"
+                  target="_blank"
+                >
+                  <Avatar className={classes.socialMediaLogo} src={twitter} />
+                </a>
+                <a
+                  className="social"
+                  href="https://www.instagram.com/pulangcrackers/"
+                  target="_blank"
+                >
+                  <Avatar className={classes.socialMediaLogo} src={instagram} />
+                </a>
+                <a
+                  className="social"
+                  href="https://github.com/pulangcrackers/"
+                  target="_blank"
+                >
+                  <Avatar className={classes.socialMediaLogo} src={github} />
+                </a>
+                <a
+                  className="social"
+                  href="https://www.linkedin.com/in/paula-marie-binongo-024319167/"
+                  target="_blank"
+                >
+                  <Avatar className={classes.socialMediaLogo} src={linkedIn} />
+                </a>
               </Toolbar>
             </div>
           </TabPanel>
