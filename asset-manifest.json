@@ -1,20 +1,22 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.27fd15f6.chunk.css",
-    "main.js": "/portfolio/static/js/main.2d9428df.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.2d9428df.chunk.js.map",
+    "main.css": "/portfolio/static/css/main.1f40a0eb.chunk.css",
+    "main.js": "/portfolio/static/js/main.dd72cf54.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.dd72cf54.chunk.js.map",
     "runtime~main.js": "/portfolio/static/js/runtime~main.759bc70d.js",
     "runtime~main.js.map": "/portfolio/static/js/runtime~main.759bc70d.js.map",
-    "static/js/2.146f0d73.chunk.js": "/portfolio/static/js/2.146f0d73.chunk.js",
-    "static/js/2.146f0d73.chunk.js.map": "/portfolio/static/js/2.146f0d73.chunk.js.map",
+    "static/js/2.372f8c84.chunk.js": "/portfolio/static/js/2.372f8c84.chunk.js",
+    "static/js/2.372f8c84.chunk.js.map": "/portfolio/static/js/2.372f8c84.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "precache-manifest.35edcec461a0d9cef0cada3b9f52a75e.js": "/portfolio/precache-manifest.35edcec461a0d9cef0cada3b9f52a75e.js",
+    "precache-manifest.1350fb9f5c7b3badd5b80d65c635fbdf.js": "/portfolio/precache-manifest.1350fb9f5c7b3badd5b80d65c635fbdf.js",
     "service-worker.js": "/portfolio/service-worker.js",
-    "static/css/main.27fd15f6.chunk.css.map": "/portfolio/static/css/main.27fd15f6.chunk.css.map",
+    "static/css/main.1f40a0eb.chunk.css.map": "/portfolio/static/css/main.1f40a0eb.chunk.css.map",
     "static/media/Logo.png": "/portfolio/static/media/Logo.3e93f8d4.png",
+    "static/media/bcg1.jpg": "/portfolio/static/media/bcg1.84f06bbd.jpg",
+    "static/media/bcg2.jpg": "/portfolio/static/media/bcg2.616668b1.jpg",
     "static/media/bg2.jpg": "/portfolio/static/media/bg2.174d1cf6.jpg",
-    "static/media/email.png": "/portfolio/static/media/email.8e462b04.png",
-    "static/media/instagram.png": "/portfolio/static/media/instagram.26ae2240.png",
-    "static/media/twitter.png": "/portfolio/static/media/twitter.cb615559.png"
+    "static/media/email.png": "/portfolio/static/media/email.039ad00e.png",
+    "static/media/instagram.png": "/portfolio/static/media/instagram.26b65b3c.png",
+    "static/media/twitter.png": "/portfolio/static/media/twitter.75731835.png"
   }
 }
